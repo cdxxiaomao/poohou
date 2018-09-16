@@ -235,42 +235,42 @@
 </script>
 <script type="text/javascript">
     //设置Cookie
-    $(".set").on("tap", function () {
+    $(".set").on("click", function () {
         var val = $(".input").val()
         $p.setCookie("b", val, 1);
         alert("已设置cookie值为:" + val + "")
     });
 
     //获取Cookie
-    $(".get").on("tap", function () {
+    $(".get").on("click", function () {
         alert($p.getCookie("b"))
     });
 
     //删除Cookie
-    $(".delete").on("tap", function () {
+    $(".delete").on("click", function () {
         $p.deleteCookie("b")
     });
 
     /*localStorage*/
     //设置localStorage
-    $(".setls").on("tap", function () {
+    $(".setls").on("click", function () {
         var val = $(".inputls").val()
         $p.setlocStorage("setlocStorageName", val)
     });
 
     //获取localStorage
-    $(".getls").on("tap", function () {
+    $(".getls").on("click", function () {
         alert($p.getlocStorage("setlocStorageName"))
     });
 
     //删除localStorage
-    $(".deletels").on("tap", function () {
+    $(".deletels").on("click", function () {
         console.log($p.locStorageKey(1))
         $p.deletelocStorage('setlocStorageName');
     });
 
     //清空localStorage
-    $(".clearls").on("tap", function () {
+    $(".clearls").on("click", function () {
         $p.clearlocStorage();
     });
 </script>

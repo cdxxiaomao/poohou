@@ -396,19 +396,17 @@
         document.cookie = key + '=' + encodeURI(value) + ';expires=' + oDate.toGMTString();
     };
     u.getCookie = function (key) { //获取cookie
-        var arr1 = document.cookie.split('; ');
-        for (var i = 0; i < arr1.length; i++) {
-            var arr2 = arr1[i].split('=');
-            if (arr2[0] == key) {
-                return decodeURI(arr2[1]);
-            }
-        }
-        return "null"
+        var arr,reg=new RegExp("(^| )"+key+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg))
+            return unescape(arr[2]); 
+        else 
+            return null; 
     };
     u.deleteCookie = function (key) { //删除cookie
         u.setCookie(key, null, -1);
     };
-
+    
+    
     /*localStorage操作*/
     u.locStorageEnabled = false;
     //设置localStorage
