@@ -106,7 +106,7 @@
     
     $("#Alert01").on("click", function () {
         $p.alert("你说什么？",function(){
-            alert(1)
+            alert("你选了 确定")
         })
     });
 
@@ -229,7 +229,7 @@
     $("#modalSub").on("click", function () {
         //Modal隐藏 带回调
         $("#modalMain").modal("hide", function () {
-            alert("手动隐藏了")
+            $p.alert("手动隐藏了")
         });
     });
 </script>
@@ -238,12 +238,12 @@
     $(".set").on("click", function () {
         var val = $(".input").val()
         $p.setCookie("b", val, 1);
-        alert("已设置cookie值为:" + val + "")
+        $p.alert("已设置cookie值为:" + val + "")
     });
 
     //获取Cookie
     $(".get").on("click", function () {
-        alert($p.getCookie("b"))
+        $p.alert($p.getCookie("b"))
     });
 
     //删除Cookie
@@ -255,12 +255,13 @@
     //设置localStorage
     $(".setls").on("click", function () {
         var val = $(".inputls").val()
-        $p.setlocStorage("setlocStorageName", val)
+        $p.setlocStorage("setlocStorageName", val);
+        $p.alert("已设置设置localStorage值为:" + val + "")
     });
 
     //获取localStorage
     $(".getls").on("click", function () {
-        alert($p.getlocStorage("setlocStorageName"))
+        $p.alert($p.getlocStorage("setlocStorageName"))
     });
 
     //删除localStorage
